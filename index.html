@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rohit kumar— CSE student portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="Stylesheet" href="index.css">
+</head>
+<body>
+
+<!-- <div id="toast"></div>
+<div class="edit-badge" id="edit-badge">✎ edit mode on — click any dashed text to change it</div> -->
+
+<header class="top">
+  <nav>
+    <div class="nav-left">
+      <div class="avatar">AR</div>
+      <div class="brand">Rohit<span class="dim">.builds</span></div>
+    </div>
+    <div class="nav-mid">
+      <a href="#about" data-nav="about">ABOUT</a>
+      <a href="#skills" data-nav="skills">SKILLS</a>
+      <a href="#work" data-nav="work">WORK</a>
+      <a href="#contact" data-nav="contact">CONTACT</a>
+    </div>
+    <div class="nav-right">
+      <div class="status"><span class="dot"></span> Open to internships · 2025</div>
+      <!-- <button class="edit-btn">✎ edit profile</button> -->
+    </div>
+  </nav>
+</header>
+
+<div id="progress"></div>
+<div class="hero-bg-wrap">
+<canvas id="netcanvas"></canvas>
+<div class="hero">
+  <div>
+    <div class="eyebrow">✦ COMPUTER SCIENCE &amp; ENGINEERING · 04/05</div>
+    <h1>WELCOME TO MY PORTFOLIO <span class="outline">.</span></h1>
+    <p class="bio" id="edit-bio">Hi, I'm <b>ROHIT KUMAR</b> — I turn curious questions into useful software. Currently exploring distributed systems, human-centred interfaces, and the small details that make products feel inevitable.</p>
+    <p class="typed-line">$ currently: <span id="typed"></span><span class="cursor"></span></p>
+    <div class="actions">
+      <button class="btn-solid" onclick="document.getElementById('work').scrollIntoView({behavior:'smooth'})">explore selected work ↘</button>
+      <a class="link-ghost" href="https://github.com/Rohitrivera" target="_blank" rel="noopener">⌥ GitHub ↗</a>
+    </div>
+  </div>
+
+  <div>
+    <div class="profile-card">
+      <div class="pc-head">
+        <span>PROFILE / CURRENT STATE</span>
+        <span class="live"><span class="dot"></span>LIVE</span>
+      </div>
+      <div class="ring-wrap" id="ring-wrap">
+        <div class="ring r1"></div>
+        <div class="ring r2"></div>
+        <div class="orbit" id="orbit1"><div class="orbit-dot"></div></div>
+        <div class="orbit2" id="orbit2"><div class="orbit2-dot"></div></div>
+        <div class="ring-core">R</div>
+        <div class="tick t1"></div>
+        <div class="tick t2"></div>
+      </div>
+      <h3 id="edit-name">Rohit </h3>
+      <div class="role" id="edit-role">CSE student ·WEB DEVELOPER AND SOFTWARE PROGRAMMERr</div>
+      <div class="pc-tagrow">
+        <span class="handle">@Rohit.builds</span>
+        <span class="yr">CSE / 2025</span>
+      </div>
+    </div>
+   
+    </div>
+  </div>
+</div>
+</div>
+<!-- 
+<div class="terminal-wrap">
+  <div class="terminal">
+    <div class="term-bar">
+      <div class="dots"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+      <span class="path">guest@Rohit: ~/portfolio</span>
+      <span class="shell-tag">INTERACTIVE SHELL</span>
+    </div>
+    <div id="term-output">
+      <p>welcome, builder. type <span style="color:var(--text)">`help`</span> to see what is available.</p>
+    </div>
+    <div class="term-input-row">
+      <span class="p">guest@Rohit:~$</span>
+      <input id="term-input" type="text" autocomplete="off" spellcheck="false" placeholder="type help" aria-label="Terminal input" />
+    </div>
+  </div>
+</div> -->
+
+<section id="about">
+  <div class="sec-eyebrow">01 THE PERSON BEHIND THE PULL REQUESTS</div>
+  <div class="sec-rule"></div>
+  <div class="about-grid reveal">
+    <div>
+      <h2>A builder with <span class="accent">range + restraint.</span></h2>
+      <p id="edit-about-p1">I like the space where engineering discipline meets a little bit of wonder. My best work starts with listening, gets sharper through prototypes, and ends with something a real person can use without a manual.</p>
+      <p id="edit-about-p2">Right now, I'm deepening my fundamentals in distributed systems while shipping full-stack experiments on the side. I care about fast feedback, accessible interfaces, and leaving codebases kinder than I found them.</p>
+      <blockquote>"Make it work. Make it clear. Then make it feel good."</blockquote>
+    </div>
+    <div class="edu-card spotlight">
+      <span class="tag">EDUCATION / 2022–2026</span>
+      <h4 id="edit-edu-degree">B.Tech · Computer Science &amp; Engineering</h4>
+      <div class="loc" id="edit-edu-loc">Tech University · Bengaluru</div>
+      <div class="cw-label">FAVORITE COURSEWORK</div>
+      <ul>
+        <li><span class="arrow">↳</span> Data structures &amp; algorithms</li>
+        <li><span class="arrow">↳</span> Operating systems</li>
+        <li><span class="arrow">↳</span> IT workshop</li>
+        <li><span class="arrow">↳</span> Editing </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="sec-eyebrow">02 SKILLS I LEARNED SO FAR 🙌</div>
+  <div class="sec-rule"></div>
+  <div class="skills-head reveal">
+    <h2>Tools I reach for <span class="accent">without thinking twice.</span></h2>
+    <p>A practical stack, always in motion. The labels matter less than knowing when to reach for each one.</p>
+  </div>
+  <div class="skills-body reveal">
+    <div class="tab-list">
+      <div class="tab-btn active" data-tab="languages">Languages <span>›</span></div>
+    </div>
+    <div class="skill-grid" id="skill-grid"></div>
+  </div>
+
+  <!-- <div class="consistency-card reveal spotlight">
+    <div>
+      <div class="cc-label">CONSISTENCY / LAST 12 MONTHS</div>
+      <div class="cc-stats">
+        <div class="num"><span class="count-num" data-target="1842" data-comma="1">0</span><span>contributions</span></div>
+        <div class="num"><span class="count-num" data-target="19">0</span><span>day streak</span></div>
+      </div>
+      <div class="heatmap" id="heatmap"></div>
+      <div class="heat-legend">less <span class="sq" style="background:#182027"></span><span class="sq" style="background:#0f4a3a"></span><span class="sq" style="background:#1d8f6d"></span><span class="sq" style="background:#34D399"></span> more</div>
+    </div>
+    <div class="cc-right">
+      <h3>Small commits. Long arc.</h3>
+      <p>Coding is a practice, not a personality trait. I keep showing up and let the graph take care of itself.</p>
+    </div>
+  </div> -->
+</section>
+
+<section id="work">
+  <div class="sec-eyebrow">03 SELECTED WORK</div>
+  <div class="sec-rule"></div>
+  <div class="proj-head reveal">
+    <h2>A few things <span class="accent">I've made.</span></h2>
+  </div>
+  <div class="filter-row reveal">
+    <button class="filter-pill active" data-filter="all">All</button>
+    <!-- <button class="filter-pill" data-filter="fullstack">Full Stack</button>
+    <button class="filter-pill" data-filter="ai">AI &amp; Systems</button>
+    <button class="filter-pill" data-filter="mobile">Mobile &amp; Cloud</button>
+    <button class="filter-pill" data-filter="opensource">Open Source</button> -->
+  </div>
+  <P style="text-align: center;">RECENTLY DO NOT HAVE MAKE ANY PROJECT </P>
+  <P style="text-align: center;">IT WILL BE APPEAR SOON  </P>
+
+  <!-- <div class="project-grid reveal">
+    <div class="project-card" data-cat="fullstack">
+      <div class="pc-top">
+        <div class="pc-badge">01</div>
+        <div class="pc-meta">FULL STACK · 2025<span class="branch">⑂</span></div>
+      </div>
+      <h3>Signal Room</h3>
+      <p>A calm, real-time operations room for teams that need to understand what changed and why.</p>
+      <div class="proj-tags"><span>Next.js</span><span>TypeScript</span><span>Postgres</span><span>WebSockets</span></div>
+      <div class="proj-links">
+        <a href="https://github.com/Rohitrivera/signal-room" target="_blank" rel="noopener">view architecture ↗</a>
+        <a class="demo" href="https://signal-room.example.com" target="_blank" rel="noopener">live demo ↗</a>
+      </div>
+    </div> -->
+<!-- 
+    <div class="project-card" data-cat="ai">
+      <div class="pc-top">
+        <div class="pc-badge">02</div>
+        <div class="pc-meta">AI &amp; SYSTEMS · 2024<span class="branch">⑂</span></div>
+      </div>
+      <h3>Atlas AI</h3>
+      <p>A visual study companion that turns dense technical notes into linked, memorable concepts.</p>
+      <div class="proj-tags"><span>Python</span><span>FastAPI</span><span>React</span><span>Embeddings</span></div>
+      <div class="proj-links">
+        <a href="https://github.com/Rohitrivera/atlas-ai" target="_blank" rel="noopener">view architecture ↗</a>
+        <a class="demo" href="https://atlas-ai.example.com" target="_blank" rel="noopener">live demo ↗</a>
+      </div>
+    </div> -->
+
+    <!-- <div class="project-card" data-cat="mobile">
+      <div class="pc-top">
+        <div class="pc-badge">03</div>
+        <div class="pc-meta">MOBILE &amp; CLOUD · 2024<span class="branch">⑂</span></div>
+      </div>
+      <h3>Pulse Cloud</h3>
+      <p>A mobile-first habit tracker with a tiny footprint, offline-first state, and thoughtful reminders.</p>
+      <div class="proj-tags"><span>React Native</span><span>SQLite</span><span>AWS Lambda</span></div>
+      <div class="proj-links">
+        <a href="https://github.com/Rohitrivera/pulse-cloud" target="_blank" rel="noopener">view architecture ↗</a>
+        <a class="demo" href="https://pulse-cloud.example.com" target="_blank" rel="noopener">live demo ↗</a>
+      </div>
+    </div>
+
+    <div class="project-card" data-cat="opensource">
+      <div class="pc-top">
+        <div class="pc-badge">04</div>
+        <div class="pc-meta">OPEN SOURCE · 2023<span class="branch">⑂</span></div>
+      </div>
+      <h3>tiny-queue</h3>
+      <p>An open-source priority queue with a clean API, exhaustive tests, and docs for first-time contributors.</p>
+      <div class="proj-tags"><span>Go</span><span>Testing</span><span>CLI</span></div>
+      <div class="proj-links">
+        <a href="https://github.com/Rohitrivera/tiny-queue" target="_blank" rel="noopener">view architecture ↗</a>
+        <a class="demo" href="https://pkg.go.dev/tiny-queue" target="_blank" rel="noopener">live demo ↗</a>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<section id="contact">
+  <div class="sec-eyebrow">04 LET'S MAKE SOMETHING WORTH OPENING</div>
+  <div class="sec-rule"></div>
+  <div class="contact-grid reveal">
+    <div>
+      <h2>Have a good <span class="accent">problem?</span></h2>
+      <p id="edit-contact-p">Whether you're hiring, building, learning, or just want to compare notes, my inbox is open.</p>
+      <div class="link-pills">
+        <a class="link-pill spotlight" href="https://github.com/Rk-obitouchiha" target="_blank" rel="noopener">⑂ GitHub <span class="arrow">↗</span></a>
+        <a class="link-pill spotlight" href="https://linkedin.com/in/Rohitrivera" target="_blank" rel="noopener">⛓ LinkedIn <span class="arrow">↗</span></a>
+        <a class="link-pill spotlight" href="mailto:Rohit.rivera@example.com">✉ Email <span class="arrow">↗</span></a>
+        <a class="link-pill spotlight" href="https://twitter.com/Rohitbuilds" target="_blank" rel="noopener">𝕏 / Twitter <span class="arrow">↗</span></a>
+        <a class="link-pill spotlight" href="https://leetcode.com/Rohitrivera" target="_blank" rel="noopener">&lt;/&gt; LeetCode <span class="arrow">↗</span></a>
+      </div>
+      <button class="copy-email" id="copy-email" data-email="Rohit.rivera@example.com">⧉ copy email address</button>
+    </div>
+
+    <div class="contact-form spotlight" id="contact-form">
+      <div class="label">SEND A SIGNAL</div>
+      <div class="field" id="field-name">
+        <label>YOUR NAME</label>
+        <input type="text" id="f-name" placeholder="Jane Doe" />
+      </div>
+      <div class="field" id="field-email">
+        <label>YOUR EMAIL</label>
+        <input type="email" id="f-email" placeholder="jane@company.com" />
+      </div>
+      <div class="field" id="field-idea">
+        <label>THE IDEA</label>
+        <textarea id="f-idea" placeholder="I'd love to talk about..."></textarea>
+      </div>
+      <button class="submit-btn" id="prepare-btn" disabled>prepare message ➤</button>
+      <div class="form-note">This is a browser-only draft. Your email app stays in control.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2025 Rohit. Built with curiosity.</span>
+  <div class="right">
+    <span>React · TypeScript · too much coffee</span>
+    <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">back to top ↗</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* scroll progress bar */
+  const progress = document.getElementById('progress');
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    const pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+    progress.style.width = pct + '%';
+  });
+
+  /* typed status line */
+  const roles = ['shipping a side project.','Developing skill.','contact for more details','open to internships.'];
+  const typedEl = document.getElementById('typed');
+  let ri = 0, ci = 0, deleting = false;
+  function typeLoop(){
+    const word = roles[ri];
+    if (!deleting){
+      ci++; typedEl.textContent = word.slice(0, ci);
+      if (ci === word.length){ deleting = true; setTimeout(typeLoop, 1400); return; }
+    } else {
+      ci--; typedEl.textContent = word.slice(0, ci);
+      if (ci === 0){ deleting = false; ri = (ri+1) % roles.length; }
+    }
+    setTimeout(typeLoop, deleting ? 35 : 65);
+  }
+  typeLoop();
+
+  /* animated network background in hero */
+  const canvas = document.getElementById('netcanvas');
+  const ctx = canvas.getContext('2d');
+  let nodes = [];
+  function resizeCanvas(){
+    const wrap = canvas.parentElement;
+    canvas.width = wrap.offsetWidth;
+    canvas.height = wrap.offsetHeight;
+    const count = Math.floor((canvas.width * canvas.height) / 16000);
+    nodes = Array.from({length: count}, () => ({
+      x: Math.random()*canvas.width, y: Math.random()*canvas.height,
+      vx: (Math.random()-0.5)*0.35, vy: (Math.random()-0.5)*0.35
+    }));
+  }
+  function tickCanvas(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    nodes.forEach(n => {
+      n.x += n.vx; n.y += n.vy;
+      if (n.x < 0 || n.x > canvas.width) n.vx *= -1;
+      if (n.y < 0 || n.y > canvas.height) n.vy *= -1;
+    });
+    for (let i=0;i<nodes.length;i++){
+      for (let j=i+1;j<nodes.length;j++){
+        const dx = nodes[i].x-nodes[j].x, dy = nodes[i].y-nodes[j].y;
+        const dist = Math.sqrt(dx*dx+dy*dy);
+        if (dist < 120){
+          ctx.strokeStyle = `rgba(62,239,218,${1 - dist/120})`;
+          ctx.lineWidth = 0.6;
+          ctx.beginPath(); ctx.moveTo(nodes[i].x, nodes[i].y); ctx.lineTo(nodes[j].x, nodes[j].y); ctx.stroke();
+        }
+      }
+    }
+    ctx.fillStyle = 'rgba(245,166,35,0.7)';
+    nodes.forEach(n => { ctx.beginPath(); ctx.arc(n.x,n.y,1.5,0,Math.PI*2); ctx.fill(); });
+    requestAnimationFrame(tickCanvas);
+  }
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+  if (!reduceMotion) requestAnimationFrame(tickCanvas);
+
+  /* konami code easter egg */
+  const seq = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+  let pos = 0;
+  window.addEventListener('keydown', (e) => {
+    const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+    if (key === seq[pos]) { pos++; } else { pos = (key === seq[0]) ? 1 : 0; }
+    if (pos === seq.length){
+      pos = 0;
+      showToastLater('Achievement unlocked: Konami Master 🎮');
+      document.getElementById('term-output') && printLineLater("Achievement unlocked: Konami Master. Have a cookie.");
+    }
+  });
+  function showToastLater(msg){ const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),1800); }
+  function printLineLater(text){ const out = document.getElementById('term-output'); const p = document.createElement('p'); p.textContent = text; out.appendChild(p); out.scrollTop = out.scrollHeight; }
+
+  /* ---------- owner-only "edit profile" mode ----------
+     Change OWNER_PASSCODE before publishing. Only someone who
+     enters this passcode can toggle edit mode in their own browser;
+     visitors without it always see the read-only page. Saved edits
+     are stored in that browser's localStorage only (not shared). */
+  // const OWNER_PASSCODE = "Rohitbuilds2026";
+  // const EDIT_IDS = ['edit-bio','edit-name','edit-role','edit-about-p1','edit-about-p2','edit-edu-degree','edit-edu-loc','edit-contact-p'];
+  // const editBtn = document.querySelector('.edit-btn');
+  // const editBadge = document.getElementById('edit-badge');
+  // let editing = false;
+
+  // function restoreSavedEdits(){
+  //   EDIT_IDS.forEach(id => {
+  //     const saved = localStorage.getItem('editable:' + id);
+  //     const el = document.getElementById(id);
+  //     if (saved !== null && el) el.innerHTML = saved;
+  //   });
+  // }
+  // restoreSavedEdits();
+
+  // function setEditing(on){
+  //   editing = on;
+  //   EDIT_IDS.forEach(id => {
+  //     const el = document.getElementById(id);
+  //     if (!el) return;
+  //     el.contentEditable = on ? 'true' : 'false';
+  //     if (!on) return;
+  //     el.addEventListener('blur', function saveHandler(){
+  //       localStorage.setItem('editable:' + id, el.innerHTML);
+  //     });
+  //   });
+  //   editBtn.classList.toggle('editing', on);
+  //   editBtn.innerHTML = on ? '🔒 lock profile' : '✎ edit profile';
+  //   editBadge.classList.toggle('show', on);
+  //   if (on) showToast('Edit mode unlocked — changes save to this browser only');
+  // }
+
+  // editBtn.addEventListener('click', () => {
+  //   if (editing){ setEditing(false); return; }
+  //   const attempt = window.prompt('Enter the owner passcode to edit this profile:');
+  //   if (attempt === null) return;
+  //   if (attempt === OWNER_PASSCODE){ setEditing(true); }
+  //   else { showToast('Incorrect passcode — edit mode stays locked'); }
+  // });
+
+  /* nav scroll-spy */
+  const navLinks = document.querySelectorAll('.nav-mid a');
+  const spySections = ['about','skills','work','contact'].map(id => document.getElementById(id)).filter(Boolean);
+  const spyIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting){
+        navLinks.forEach(a => a.classList.toggle('active', a.dataset.nav === e.target.id));
+      }
+    });
+  }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
+  spySections.forEach(s => spyIO.observe(s));
+
+  /* spotlight cursor glow */
+  document.querySelectorAll('.spotlight').forEach(el => {
+    el.addEventListener('mousemove', (e) => {
+      const r = el.getBoundingClientRect();
+      el.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      el.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  });
+
+  /* count-up numbers */
+  function animateCount(el){
+    const target = parseFloat(el.dataset.target);
+    const decimals = parseInt(el.dataset.decimal || '0', 10);
+    const pad = parseInt(el.dataset.pad || '0', 10);
+    const useComma = el.dataset.comma === '1';
+    const suffix = el.dataset.suffix || '';
+    const duration = 1200;
+    const start = performance.now();
+    function frame(now){
+      const t = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - t, 3);
+      let val = target * eased;
+      let text = decimals ? val.toFixed(decimals) : Math.round(val).toString();
+      if (pad) text = text.padStart(pad, '0');
+      if (useComma) text = Math.round(val).toLocaleString();
+      el.textContent = text + suffix;
+      if (t < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+  const countIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting){ animateCount(e.target); countIO.unobserve(e.target); }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.count-num').forEach(el => countIO.observe(el));
+
+  /* reveal on scroll */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* toast */
+  const toast = document.getElementById('toast');
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 1800);
+  }
+
+  /* copy email */
+  const copyBtn = document.getElementById('copy-email');
+  copyBtn.addEventListener('click', () => {
+    const email = copyBtn.dataset.email;
+    navigator.clipboard.writeText(email).then(() => showToast('Email copied to clipboard ✓'))
+      .catch(() => showToast('Copy failed — email is ' + email));
+  });
+
+  /* prepare message -> mailto */
+  const nameInput = document.getElementById('f-name');
+  const emailInput = document.getElementById('f-email');
+  const ideaInput = document.getElementById('f-idea');
+  const prepareBtn = document.getElementById('prepare-btn');
+  const contactForm = document.getElementById('contact-form');
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  function validateForm(){
+    const nameOk = nameInput.value.trim().length > 1;
+    const emailOk = emailRe.test(emailInput.value.trim());
+    const ideaOk = ideaInput.value.trim().length > 3;
+    document.getElementById('field-name').classList.toggle('invalid', nameInput.value.length > 0 && !nameOk);
+    document.getElementById('field-email').classList.toggle('invalid', emailInput.value.length > 0 && !emailOk);
+    document.getElementById('field-idea').classList.toggle('invalid', ideaInput.value.length > 0 && !ideaOk);
+    const allOk = nameOk && emailOk && ideaOk;
+    prepareBtn.disabled = !allOk;
+    return allOk;
+  }
+  [nameInput, emailInput, ideaInput].forEach(inp => inp.addEventListener('input', validateForm));
+
+  document.getElementById('prepare-btn').addEventListener('click', () => {
+    if (!validateForm()){
+      contactForm.classList.remove('shake');
+      void contactForm.offsetWidth;
+      contactForm.classList.add('shake');
+      return;
+    }
+    const name = document.getElementById('f-name').value || 'there';
+    const email = document.getElementById('f-email').value || '';
+    const idea = document.getElementById('f-idea').value || '';
+    const subject = encodeURIComponent('Let\'s talk — from ' + name);
+    const body = encodeURIComponent(idea + (email ? ('\n\n— ' + name + ' (' + email + ')') : ('\n\n— ' + name)));
+    window.location.href = `mailto:Rohit.rohit.kumar.kgf.1234@gmail.com?subject=${subject}&body=${body}`;
+  });
+
+  /* skills tabs */
+  const skillData = {
+    languages: [['01','JavaScript'],['02','Python'],['03','C++'],['04','JAVA'],['05','DSA'],['06','C'] ,['07','HTML'],['08','CSS']]
+    
+  };
+  const skillGrid = document.getElementById('skill-grid');
+  function renderSkills(tab){
+    skillGrid.innerHTML = skillData[tab].map(([idx,name]) =>
+      `<div class="skill-item spotlight"><span><span class="idx">${idx}</span>${name}</span><span class="check">✓</span></div>`
+    ).join('');
+  }
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderSkills(btn.dataset.tab);
+    });
+  });
+  renderSkills('languages');
+
+  /* contribution heatmap */
+  const heatmap = document.getElementById('heatmap');
+  const shades = ['#182027','#0f4a3a','#1d8f6d','#34D399'];
+  let html = '';
+  for (let i=0;i<96;i++){
+    const w = Math.random();
+    const shade = w < 0.28 ? shades[0] : w < 0.55 ? shades[1] : w < 0.8 ? shades[2] : shades[3];
+    const contributions = w < 0.28 ? 0 : Math.round(w * 14);
+    html += `<div class="sq" style="background:${shade}" title="${contributions} contribution${contributions===1?'':'s'}"></div>`;
+  }
+  heatmap.innerHTML = html;
+  heatmap.addEventListener('click', (e) => {
+    if (e.target.classList.contains('sq')){
+      e.target.classList.remove('pulse');
+      void e.target.offsetWidth;
+      e.target.classList.add('pulse');
+    }
+  });
+
+  /* orbiting dot speeds up on hover */
+  const ringWrap = document.getElementById('ring-wrap');
+  const orbit1 = document.getElementById('orbit1');
+  const orbit2 = document.getElementById('orbit2');
+  if (ringWrap){
+    ringWrap.addEventListener('mouseenter', () => { orbit1.classList.add('fast'); orbit2.classList.add('fast'); });
+    ringWrap.addEventListener('mouseleave', () => { orbit1.classList.remove('fast'); orbit2.classList.remove('fast'); });
+  }
+
+  /* project card tilt */
+  document.querySelectorAll('.project-card').forEach(card => {
+    card.style.transformStyle = 'preserve-3d';
+    card.addEventListener('mousemove', (e) => {
+      const r = card.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5;
+      const y = (e.clientY - r.top) / r.height - 0.5;
+      card.style.transform = `perspective(700px) rotateY(${x*5}deg) rotateX(${-y*5}deg) translateY(-2px)`;
+    });
+    card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+  });
+
+  /* project filters */
+  const filterBtns = document.querySelectorAll('.filter-pill');
+  const cards = document.querySelectorAll('.project-card');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      cards.forEach(c => c.classList.toggle('hidden', f !== 'all' && c.dataset.cat !== f));
+    });
+  });
+
+  /* terminal */
+  const out = document.getElementById('term-output');
+  const input = document.getElementById('term-input');
+  const commands = {
+    help: () => `available commands:
+  about      - who I am
+  skills     - what I work with
+  projects   - things I've shipped
+  contact    - how to reach me
+  whoami     - identity check
+  sudo       - try it and see
+  clear      - clear the screen`,
+    about: () => `Rohit Rivera — CSE student, full-stack builder.
+Currently deep in distributed systems and human-centred interfaces.`,
+    skills: () => `Languages: TypeScript, Python, C++, Go, SQL, Rust
+Frontend : React, Next.js, Tailwind, Redux
+Systems  : Docker, Kubernetes, Postgres, Redis, Kafka, AWS`,
+    projects: () => `01 Signal Room  - real-time ops dashboard (Next.js)
+02 Atlas AI     - study companion (Python, FastAPI)
+03 Pulse Cloud  - habit tracker (React Native)
+04 tiny-queue   - open-source priority queue (Go)`,
+    contact: () => `email  : Rohit.rivera@example.com
+github : github.com/Rohitrivera
+linkedin: linkedin.com/in/Rohitrivera`,
+    whoami: () => `guest // viewing Rohit.builds // probably impressed`,
+    sudo: () => `permission denied: guest is not in the sudoers file.
+this incident will be reported to nobody in particular.`,
+  };
+  function printLine(text, cls){
+    const p = document.createElement('p');
+    if (cls) p.className = cls;
+    p.textContent = text;
+    out.appendChild(p);
+    out.scrollTop = out.scrollHeight;
+  }
+  function runCommand(raw){
+    const cmd = raw.trim();
+    printLine('guest@Rohit:~$ ' + cmd, 'prompt-line');
+    if (!cmd) return;
+    const key = cmd.toLowerCase();
+    if (key === 'clear'){ out.innerHTML = ''; return; }
+    if (commands[key]){ printLine(commands[key]()); }
+    else { printLine(`command not found: ${cmd} (type 'help')`); }
+  }
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter'){ runCommand(input.value); input.value = ''; }
+  });
+  document.querySelector('.terminal').addEventListener('click', () => input.focus());
+})();
+</script>
+
+ <!-- <div class="stat-grid">
+      <div class="stat-box spotlight"><div class="num"><span class="count-num" data-target="0">0</span></div><div class="lbl">projects shipped</div></div>
+      <div class="stat-box spotlight"><div class="num"><span class="count-num" data-target="0" data-suffix="k" data-decimal="1">0</span></div><div class="lbl">commits logged</div></div>
+      <div class="stat-box spotlight"><div class="num"><span class="count-num" data-target="4" data-pad="2">00</span></div><div class="lbl">hackathons</div></div>
+      <div class="stat-box spotlight"><div class="num">∞</div><div class="lbl">curious questions</div></div>   -->
+</body>
+</html>
