@@ -13,8 +13,76 @@
 <!-- <div id="toast"></div>
 <div class="edit-badge" id="edit-badge">✎ edit mode on — click any dashed text to change it</div> -->
 
-<header class="top">
-  <nav>
+
+
+
+
+<nav>
+
+  <!-- Hamburger button -->
+  <button class="menu-btn" id="menuBtn" type="button" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <div class="nav-left">
+    <div class="avatar">AR</div>
+    <div class="brand">
+      Rohit<span class="dim">.builds</span>
+    </div>
+  </div>
+
+  <div class="nav-mid">
+    <a href="#about" data-nav="about">ABOUT</a>
+    <a href="#skills" data-nav="skills">SKILLS</a>
+    <a href="#work" data-nav="work">WORK</a>
+    <a href="#contact" data-nav="contact">CONTACT</a>
+  </div>
+
+  <div class="nav-right">
+    <div class="status">
+      <span class="dot"></span>
+      Open to internships · 2025
+    </div>
+  </div>
+
+</nav>
+
+
+<!-- Mobile/side menu -->
+<div class="side-menu" id="sideMenu">
+  <a href="#about">ABOUT</a>
+  <a href="#skills">SKILLS</a>
+  <a href="#work">WORK</a>
+  <a href="#contact">CONTACT</a>
+</div>
+
+
+
+
+
+
+<!-- <header class="top">
+<!-- Navigation -->
+<!-- <header class="navbar">
+    <button class="menu-btn" id="menuBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button> --> -->
+
+
+<!-- Side Menu -->
+<!-- <nav class="side-menu" id="sideMenu">
+    <a href="#home">Home</a>
+    <a href="#about">About Me</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+</nav> -->
+
+  <!-- <nav>
     <div class="nav-left">
       <div class="avatar">AR</div>
       <div class="brand">Rohit<span class="dim">.builds</span></div>
@@ -27,10 +95,9 @@
     </div>
     <div class="nav-right">
       <div class="status"><span class="dot"></span> Open to internships · 2025</div>
-      <!-- <button class="edit-btn">✎ edit profile</button> -->
-    </div>
-  </nav>
-</header>
+      <button class="edit-btn">✎ edit profile</button> -->
+    <!-- </div> -->
+  
 
 <div id="progress"></div>
 <div class="hero-bg-wrap">
@@ -454,6 +521,7 @@
   /* toast */
   const toast = document.getElementById('toast');
   function showToast(msg){
+    if (!toast) return;
     toast.textContent = msg;
     toast.classList.add('show');
     setTimeout(() => toast.classList.remove('show'), 1800);
@@ -522,24 +590,26 @@
   });
   renderSkills('languages');
 
-  /* contribution heatmap */
+  /* contribution heatmap (only run if the section is enabled) */
   const heatmap = document.getElementById('heatmap');
-  const shades = ['#182027','#0f4a3a','#1d8f6d','#34D399'];
-  let html = '';
-  for (let i=0;i<96;i++){
-    const w = Math.random();
-    const shade = w < 0.28 ? shades[0] : w < 0.55 ? shades[1] : w < 0.8 ? shades[2] : shades[3];
-    const contributions = w < 0.28 ? 0 : Math.round(w * 14);
-    html += `<div class="sq" style="background:${shade}" title="${contributions} contribution${contributions===1?'':'s'}"></div>`;
-  }
-  heatmap.innerHTML = html;
-  heatmap.addEventListener('click', (e) => {
-    if (e.target.classList.contains('sq')){
-      e.target.classList.remove('pulse');
-      void e.target.offsetWidth;
-      e.target.classList.add('pulse');
+  if (heatmap) {
+    const shades = ['#182027','#0f4a3a','#1d8f6d','#34D399'];
+    let html = '';
+    for (let i=0;i<96;i++){
+      const w = Math.random();
+      const shade = w < 0.28 ? shades[0] : w < 0.55 ? shades[1] : w < 0.8 ? shades[2] : shades[3];
+      const contributions = w < 0.28 ? 0 : Math.round(w * 14);
+      html += `<div class="sq" style="background:${shade}" title="${contributions} contribution${contributions===1?'':'s'}"></div>`;
     }
-  });
+    heatmap.innerHTML = html;
+    heatmap.addEventListener('click', (e) => {
+      if (e.target.classList.contains('sq')){
+        e.target.classList.remove('pulse');
+        void e.target.offsetWidth;
+        e.target.classList.add('pulse');
+      }
+    });
+  }
 
   /* orbiting dot speeds up on hover */
   const ringWrap = document.getElementById('ring-wrap');
@@ -574,9 +644,10 @@
     });
   });
 
-  /* terminal */
+  /* terminal (only run if the terminal section is enabled) */
   const out = document.getElementById('term-output');
   const input = document.getElementById('term-input');
+  if (out && input) {
   const commands = {
     help: () => `available commands:
   about      - who I am
@@ -621,9 +692,41 @@ this incident will be reported to nobody in particular.`,
   input.addEventListener('keydown', (e) => {
     if (e.key === 'Enter'){ runCommand(input.value); input.value = ''; }
   });
-  document.querySelector('.terminal').addEventListener('click', () => input.focus());
+  const terminal = document.querySelector('.terminal');
+  if (terminal) terminal.addEventListener('click', () => input.focus());
+  }
 })();
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const menuBtn = document.getElementById("menuBtn");
+    const sideMenu = document.getElementById("sideMenu");
+
+    if (!menuBtn || !sideMenu) return;
+
+    menuBtn.addEventListener("click", function () {
+        menuBtn.classList.toggle("active");
+        sideMenu.classList.toggle("active");
+    });
+
+    // Close menu when clicking a link
+    sideMenu.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            menuBtn.classList.remove("active");
+            sideMenu.classList.remove("active");
+        });
+    });
+});
+
+
+
 </script>
+
+</body>
+</html>
 
  <!-- <div class="stat-grid">
       <div class="stat-box spotlight"><div class="num"><span class="count-num" data-target="0">0</span></div><div class="lbl">projects shipped</div></div>
@@ -632,3 +735,6 @@ this incident will be reported to nobody in particular.`,
       <div class="stat-box spotlight"><div class="num">∞</div><div class="lbl">curious questions</div></div>   -->
 </body>
 </html>
+
+
+
